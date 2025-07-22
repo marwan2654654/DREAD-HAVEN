@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>dread haven</title>
-
+  <title>DREAD HAVEN</title>
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -48,17 +46,11 @@
       animation: lo 1.5s linear infinite;
     }
 
-  
     @keyframes lo {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    
     @media (min-width: 768px) {
       .lo {
         width: 120px;
@@ -73,14 +65,33 @@
   </style>
 </head>
 <body>
-  <h1 class="tit" translate="no">dread haven</h1>
+  <h1 class="tit" translate="no">DREAD HAVEN</h1>
   <div class="lo"></div>
 
-    <script>
-    setTimeout(function () {
-        window.location.href = "all.php";
-    }, 6000);
-  </script>
+  <!-- iframe لتحميل الصفحة في الخلفية -->
+  <iframe src="all.php" style="display: none;" onload="pageLoaded = true;"></iframe>
 
+  <script>
+    let pageLoaded = false;
+    let timePassed = false;
+
+    // المؤقت (6 ثواني)
+    setTimeout(() => {
+      timePassed = true;
+      checkReady();
+    }, 6000);
+
+    // دالة تفحص إذا الشرطين تحققا
+    function checkReady() {
+      if (pageLoaded && timePassed) {
+        window.location.href = "all.php";
+      }
+    }
+
+    // عند تحميل iframe، تحقق أيضًا
+    window.onload = () => {
+      checkReady();
+    };
+  </script>
 </body>
 </html>
