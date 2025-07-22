@@ -182,16 +182,8 @@ $booking_count = file_exists("bookings.txt") ? (int)file_get_contents("bookings.
   window.OneSignalDeferred = window.OneSignalDeferred || [];
   OneSignalDeferred.push(async function(OneSignal) {
     await OneSignal.init({
-      appId: "57a313e4-5104-4650-a4c2-cb5cb3247427",
+      appId: "61a16baf-7726-4d33-8e30-1315ab17a03d",
     });
-  });
-</script>
-
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    const userId = await OneSignal.getUserId();
-    console.log("🆔 Player ID الخاص بك:", userId);
   });
 </script>
 
