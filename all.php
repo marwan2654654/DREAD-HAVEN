@@ -63,6 +63,7 @@ $booking_count = file_exists("bookings.txt") ? (int)file_get_contents("bookings.
 
 </head>
 <body>
+
   <div class="all">
     <div class="f1">
       <div class="nave_bar">
@@ -97,6 +98,8 @@ $booking_count = file_exists("bookings.txt") ? (int)file_get_contents("bookings.
     <b>Do you have the courage to uncover what was meant to stay buried?</b><br />
     <b>Book now</b>, and start your journey inside one of the most immersive and thrilling horror worlds.
   </p>
+  <a href="https://dread2haven.wuaze.com/">Dread Haven </a> © 2025 by <a href="mailto:studio.galaxyarts@gmail.com">Galaxy arts studio games </a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+
       </div>
     </div>
 
