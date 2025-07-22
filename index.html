@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dread haven</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'myfont', Arial, sans-serif;
+      color: red;
+    }
+
+    @font-face {
+      font-family: 'myfont';
+      src: url('myfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .tit {
+      font-size: clamp(3rem, 5vw, 3.5rem);
+      margin-bottom: 40px;
+      font-weight: 900;
+    }
+
+    .lo {
+      width: 80px;
+      height: 80px;
+      border: 5px solid red;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: lo 1.5s linear infinite;
+    }
+
+  
+    @keyframes lo {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    
+    @media (min-width: 768px) {
+      .lo {
+        width: 120px;
+        height: 120px;
+        border-width: 6px;
+      }
+      .tit {
+        font-size: clamp(3rem, 4vw, 5rem);
+        margin-bottom: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="tit" translate="no">dread haven</h1>
+  <div class="lo"></div>
+
+    <script>
+    setTimeout(function () {
+        window.location.href = "all.php";
+    }, 6000);
+  </script>
+
+</body>
+</html>

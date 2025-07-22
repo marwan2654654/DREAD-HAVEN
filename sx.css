@@ -1,0 +1,304 @@
+:root {
+  --color_b: #ffffff;
+  --font-base: 1rem;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #000000bb;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--color_b);
+  overflow: hidden;
+}
+
+.all {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  height: 100vh;
+  gap: 10px;
+}
+
+.all div {
+  border: 2px solid var(--color_b);
+}
+
+.f1 {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.f2 {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  height: 100%;
+}
+
+.nave_bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  height: 7vh;
+  width: 7vh;
+  border-radius: 50%;
+  border: 2px solid var(--color_b);
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.title {
+  font-family: myfont;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.all_p {
+  height: calc(97.5vh - 60px);
+  overflow-y: auto;
+  padding: 10px 5%;
+  font-size: var(--font-base);
+  line-height: 1.6;
+}
+
+.book-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.book-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+  body, html {
+    overflow: hidden;
+  }
+
+  .all {
+    display: block;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .all div {
+    border: none;
+  }
+
+  .f1, .f2a, .f2b {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .nave_bar {
+    justify-content: center;
+  }
+
+  .logo {
+    height: 6vh;
+    width: 6vh;
+    margin-right: 8px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .all_p {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    padding: 10px 5%;
+  }
+
+  .book-box {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book-btn {
+    width: 80%;
+    max-width: 250px;
+    margin-top: 20px;
+  }
+
+  .f2 {
+    display: block;
+    height: auto;
+  }
+
+  .f2b {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color_b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .all {
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+  }
+
+  .logo {
+    height: 5.5vh;
+    width: 5.5vh;
+    margin-right: 6px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .all_p {
+    font-size: 0.95rem;
+    padding: 8px 4%;
+  }
+
+  .book-box h2 {
+    font-size: 1.1rem;
+  }
+
+  .book-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .f2b {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 1441px) {
+  .all {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .logo {
+    height: 8vh;
+    width: 8vh;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .all_p {
+    font-size: 1.05rem;
+    padding: 20px 6%;
+  }
+
+  .book-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .book-btn {
+    font-family: myfont;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
+
+  .f2b {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+    .form-container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      color: var(--color_b);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #2b2b2b;
+      border: 1px solid #444;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00ffcc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--color_b)
+    }
+
+    .success {
+      margin-top: 10px;
+      color: var(--color_b);
+      text-align: center;
+    }
