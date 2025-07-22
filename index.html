@@ -73,31 +73,52 @@
   <h1 class="tit" translate="no">DREAD HAVEN</h1>
   <div class="lo"></div>
 
-  <!-- iframe لتحميل الصفحة في الخلفية -->
+  <!-- iframe لتحميل all.php في الخلفية -->
   <iframe src="all.php" style="display: none;" onload="pageLoaded = true;"></iframe>
 
   <script>
     let pageLoaded = false;
     let timePassed = false;
+    let imagesLoaded = false;
 
-    // المؤقت (6 ثواني)
+    // صور نريد تحميلها مسبقًا من all.php
+    const imageList = [
+      "assets/img/bg.jpg",
+      "assets/img/logo.png",
+      "assets/img/character.png"
+    ];
+
+    let loadedCount = 0;
+    imageList.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imageList.length) {
+          imagesLoaded = true;
+          checkReady();
+        }
+      };
+    });
+
+    // بعد 6 ثواني
     setTimeout(() => {
       timePassed = true;
       checkReady();
     }, 6000);
 
-    // عند تحميل iframe
+    // بعد تحميل iframe
     window.onload = () => {
       checkReady();
     };
 
-    // عند تحقق الشرطين، أضف تأثير التلاشي ثم انتقل
+    // تحقق من الشروط الثلاثة
     function checkReady() {
-      if (pageLoaded && timePassed) {
+      if (pageLoaded && timePassed && imagesLoaded) {
         document.body.classList.add("fade-out");
         setTimeout(() => {
           window.location.href = "all.php";
-        }, 600); // نفس مدة الـ transition
+        }, 600); // مدة التلاشي
       }
     }
   </script>
