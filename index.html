@@ -73,15 +73,15 @@
   <h1 class="tit" translate="no">DREAD HAVEN</h1>
   <div class="lo"></div>
 
-  <!-- iframe لتحميل all.php في الخلفية -->
-  <iframe src="all.php" style="display: none;" onload="pageLoaded = true;"></iframe>
+  <!-- iframe لتحميل all.php مسبقًا -->
+  <iframe src="all.php" style="display: none;" onload="pageLoaded = true; checkReady();"></iframe>
 
   <script>
     let pageLoaded = false;
-    let timePassed = false;
     let imagesLoaded = false;
+    let timePassed = false;
 
-    // صور نريد تحميلها مسبقًا من all.php
+    // ✅ قائمة الصور المهمة داخل all.php — غيّرها حسب صورك
     const imageList = [
       "assets/img/bg.jpg",
       "assets/img/logo.png",
@@ -99,22 +99,25 @@
           checkReady();
         }
       };
+      img.onerror = () => {
+        // لو فشل تحميل صورة، نعتبرها محمّلة
+        loadedCount++;
+        if (loadedCount === imageList.length) {
+          imagesLoaded = true;
+          checkReady();
+        }
+      };
     });
 
-    // بعد 6 ثواني
+    // ✅ المؤقت 6 ثواني
     setTimeout(() => {
       timePassed = true;
       checkReady();
-    }, 1000);
+    }, 6000);
 
-    // بعد تحميل iframe
-    window.onload = () => {
-      checkReady();
-    };
-
-    // تحقق من الشروط الثلاثة
+    // ✅ دالة التحقق من الشروط الثلاثة
     function checkReady() {
-      if (pageLoaded && timePassed && imagesLoaded) {
+      if (pageLoaded && imagesLoaded && timePassed) {
         document.body.classList.add("fade-out");
         setTimeout(() => {
           window.location.href = "all.php";
